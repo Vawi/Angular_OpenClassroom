@@ -22,6 +22,6 @@ export class PostListComponent implements OnInit {
     } else if(this.loveIts < 1) {
       return 'red';
     }
-}
+  }
 
 }
