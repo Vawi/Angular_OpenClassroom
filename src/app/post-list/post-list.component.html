@@ -2,9 +2,10 @@
                 'list-group-item-success': loveIts > 0,
                 'list-group-item-danger': loveIts < 0}">
 
-              <h1 [ngStyle]="{color: getColor()}"> {{ title }} {{ lastUpdate | async | date: 'short' }} </h1>
+              <h1 [ngStyle]="{color: getColor()}"> {{ title }}  </h1>
+              <h4> {{ lastUpdate | async | date: 'short' }} </h4>
               <br />
-              <h4> {{ content }}</h4>
+              <p> {{ content }}</p>
 
               <div class="btn-toolbar">
                   <button class="btn btn-success"
@@ -14,6 +15,4 @@
                   (click)="dislike()">Don't love it !</button>
 
               </div>
-              
-            
 </li>
