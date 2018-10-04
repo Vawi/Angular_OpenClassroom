@@ -10,6 +10,7 @@ export class PostListComponent implements OnInit {
   @Input() title: string;
   @Input() content: string;   
   @Input() loveIts: number;
+  @Input() created_at: Date;
   
   constructor() { }
 
@@ -19,7 +20,7 @@ export class PostListComponent implements OnInit {
   getColor() {
     if(this.loveIts > 0) {
       return 'green';
-    } else if(this.loveIts < 1) {
+    } else if(this.loveIts < 0) {
       return 'red';
     }
   }
@@ -31,5 +32,14 @@ export class PostListComponent implements OnInit {
   dislike() {
     this.loveIts -= 1;
   }
+
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 10
+    );
+  });
 
 }

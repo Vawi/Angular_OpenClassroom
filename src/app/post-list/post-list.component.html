@@ -1,8 +1,8 @@
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': loveIts > 0,
-                'list-group-item-danger': loveIts <= 0}">
+                'list-group-item-danger': loveIts < 0}">
 
-              <h1 [ngStyle]="{color: getColor()}"> {{ title }} </h1>
+              <h1 [ngStyle]="{color: getColor()}"> {{ title }} {{ lastUpdate | async | date: 'short' }} </h1>
               <br />
               <h4> {{ content }}</h4>
 
