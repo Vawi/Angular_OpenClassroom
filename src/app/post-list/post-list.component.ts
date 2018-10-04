@@ -24,4 +24,12 @@ export class PostListComponent implements OnInit {
     }
   }
 
+  like() {
+    this.loveIts += 1;
+  }
+
+  dislike() {
+    this.loveIts -= 1;
+  }
+
 }

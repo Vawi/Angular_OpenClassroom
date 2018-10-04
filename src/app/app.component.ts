@@ -11,17 +11,17 @@ export class AppComponent {
     {
       title: 'Mon premier post',
       content: 'JDIJZIAJOQSJAINSA',
-      loveIts: 2
+      loveIts: '2'
     },
     {
       title: 'Mon deuxieme post',
       content: 'JDIJZIAJOQSJAINSAJDOS£ajisnalindvz',
-      loveIts: 0
+      loveIts: '0'
     },
     {
       title: 'Encore un post',
       content: 'JDIJZIAJOQSJAINSAOSAI£diajcajcdjnjijsdzjashfoahcpsjiapcsnpcnapeafn',
-      loveIts: 1
+      loveIts: '5'
     }
   ];
 
