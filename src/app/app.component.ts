@@ -10,19 +10,19 @@ export class AppComponent {
   posts = [
     {
       title: 'Mon premier post',
-      content: 'JDIJZIAJOQSJAINSA',
+      content: 'Un premier coucou',
       loveIts: 2,
       created_at: Date
     },
     {
       title: 'Mon deuxieme post',
-      content: 'JDIJZIAJOQSJAINSAJDOS£ajisnalindvz',
+      content: 'Un second coucou',
       loveIts: 0,
       created_at: Date
     },
     {
       title: 'Encore un post',
-      content: 'JDIJZIAJOQSJAINSAOSAI£diajcajcdjnjijsdzjashfoahcpsjiapcsnpcnapeafn',
+      content: 'On oublie pas de mettre les trois points <3',
       loveIts: -1,
       created_at: Date
     }

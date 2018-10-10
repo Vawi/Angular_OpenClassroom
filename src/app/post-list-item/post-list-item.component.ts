@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-post-list-item',
@@ -7,30 +7,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostListItemComponent implements OnInit {
 
+  @Input() title: string;
+  @Input() content: string;   
+  @Input() loveIts: number;
+  @Input() created_at: Date;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  posts = [
-    {
-      title: 'Mon premier post',
-      content: 'JDIJZIAJOQSJAINSA',
-      loveIts: 2,
-      created_at: Date
-    },
-    {
-      title: 'Mon deuxieme post',
-      content: 'JDIJZIAJOQSJAINSAJDOS£ajisnalindvz',
-      loveIts: 0,
-      created_at: Date
-    },
-    {
-      title: 'Encore un post',
-      content: 'JDIJZIAJOQSJAINSAOSAI£diajcajcdjnjijsdzjashfoahcpsjiapcsnpcnapeafn',
-      loveIts: -1,
-      created_at: Date
+  getColor() {
+    if(this.loveIts > 0) {
+      return 'green';
+    } else if(this.loveIts < 0) {
+      return 'red';
     }
-  ];
+  }
+
+  like() {
+    this.loveIts += 1;
+  }
+
+  dislike() {
+    this.loveIts -= 1;
+  }
+
+  lastUpdate = new Promise((resolve, reject) => {
+    const date = new Date();
+    setTimeout(
+      () => {
+        resolve(date);
+      }, 10
+    );
+  });
 
 }
