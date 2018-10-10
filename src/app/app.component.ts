@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Post } from "src/app/models/post";
 
 @Component({
   selector: 'app-root',
@@ -7,25 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  posts = [
-    {
-      title: 'Mon premier post',
-      content: 'Un premier coucou',
-      loveIts: 2,
-      created_at: Date
-    },
-    {
-      title: 'Mon deuxieme post',
-      content: 'Un second coucou',
-      loveIts: 0,
-      created_at: Date
-    },
-    {
-      title: 'Encore un post',
-      content: 'On oublie pas de mettre les trois points <3',
-      loveIts: -1,
-      created_at: Date
-    }
-  ];
+  posts: Post[] =[
+    new Post('Mon premier post', 'Un premier coucou', 1),
+    new Post('Mon deuxieme post', 'Un second coucou', -1),
+    new Post('Encore un post', 'On oublie pas de mettre les trois points <3', 8)
+];
 
 }

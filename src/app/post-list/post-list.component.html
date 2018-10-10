@@ -1,18 +1,5 @@
-<li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': loveIts > 0,
-                'list-group-item-danger': loveIts < 0}">
-
-              <h1 [ngStyle]="{color: getColor()}"> {{ title }}  </h1>
-              <h4> {{ lastUpdate | async | date: 'short' }} </h4>
-              <br />
-              <p> {{ content }}</p>
-
-              <div class="btn-toolbar">
-                  <button class="btn btn-success"
-                  (click)="like()">Love it !</button>
-    
-                  <button class="btn btn-danger"
-                  (click)="dislike()">Don't love it !</button>
-
-              </div>
-</li>
+<ul class="list-group" style="width: 75%">
+    <app-post-list-item *ngFor="let post of posts" [post]="post"></app-post-list-item>
+  </ul>
+  
+  
