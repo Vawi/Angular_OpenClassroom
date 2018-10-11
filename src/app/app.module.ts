@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { FormsModule } from '@angular/forms';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
-    PostListItemComponent
+    PostListItemComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
