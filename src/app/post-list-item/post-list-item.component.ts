@@ -23,4 +23,6 @@ export class PostListItemComponent implements OnInit {
   onHateIt(){
     this.post.loveIts--;
   }
+
+  
 }

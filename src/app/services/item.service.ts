@@ -12,14 +12,7 @@ export class ItemService {
     ];
 
     addItem(title: string, content: string) {
-        const PostObject = {
-          title: '',
-          content: '',
-          loveIts:0,
-          created_at: new Date
-        };
-        PostObject.title = title;
-        PostObject.content = content;
+        const PostObject = new Post(title, content, 0);
         this.posts.push(PostObject);
         this.emitPostSubject();
     }

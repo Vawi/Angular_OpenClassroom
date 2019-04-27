@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
 import { NewPostComponent } from './new-post/new-post.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
@@ -30,6 +30,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

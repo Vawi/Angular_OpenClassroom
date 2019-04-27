@@ -8,10 +8,5 @@ import { Post } from "src/app/models/post";
 })
 export class AppComponent {
 
-  posts: Post[] =[
-    new Post('Mon premier post', 'Un premier coucou', 1),
-    new Post('Mon deuxieme post', 'Un second coucou', -1),
-    new Post('Encore un post', 'On oublie pas de mettre les trois points <3', 8)
-];
 
 }

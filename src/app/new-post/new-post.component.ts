@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ItemService } from '../services/item.service';
 
@@ -10,17 +10,30 @@ import { ItemService } from '../services/item.service';
 })
 export class NewPostComponent implements OnInit {
 
+  itemForm: FormGroup;
+
   constructor(private itemService: ItemService,
-    private router: Router) { }
+    private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.initForm();
   }
 
-  onSubmit(form: NgForm) {
-  const title = form.value['title'];
-  const content = form.value['content'];
+  initForm() {
+    this.itemForm = this.formBuilder.group({
+      title: '',
+      content: ''
+    });
+}
+
+  onSubmit() {
+  const formValue = this.itemForm.value;
+  const title = formValue['title'];
+  const content = formValue['content'];
   this.itemService.addItem(title, content);
-  this.router.navigate(['/appareils']);
+  this.router.navigate(['/item']);
+  console.log('titre ' + formValue['title']);
+  console.log('content ' + formValue['content']);
   }
 
 }
