@@ -27,4 +27,12 @@ export class ItemService {
         this.emitPostSubject(); // Actualiser la liste avec le post en moins 
     }
 
+    loveIt(post : Post) {
+        post.loveIts++;
+    }
+
+    hateIt(post : Post) {
+        post.loveIts--;
+    }
+
 }
