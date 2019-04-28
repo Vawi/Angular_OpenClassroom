@@ -16,7 +16,7 @@ export class NewPostComponent implements OnInit {
     private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.initForm();
+    this.initForm(); // Initialisation du formulaire 
   }
 
   initForm() {
@@ -26,14 +26,12 @@ export class NewPostComponent implements OnInit {
     });
 }
 
-  onSubmit() {
+  onSubmit() {                             // envoi du formulaire vers le service
   const formValue = this.itemForm.value;
-  const title = formValue['title'];
-  const content = formValue['content'];
-  this.itemService.addItem(title, content);
-  this.router.navigate(['/item']);
-  console.log('titre ' + formValue['title']);
-  console.log('content ' + formValue['content']);
+  const title = formValue['title']; // Récuperer la valeur "title" du formulaire
+  const content = formValue['content']; // Récuperer la valeur "content" du formulaire
+  this.itemService.addItem(title, content); // Ajout de l'item dans l'array du service 
+  this.router.navigate(['/item']); // Retour a la list d'item 
   }
 
 }

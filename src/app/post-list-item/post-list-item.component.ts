@@ -24,5 +24,9 @@ export class PostListItemComponent implements OnInit {
     this.post.loveIts--;
   }
 
+  deleteIt() {
+    this.itemService.deleteIt(this.post);
+  }
+
   
 }

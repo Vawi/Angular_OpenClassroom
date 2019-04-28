@@ -12,13 +12,19 @@ export class ItemService {
     ];
 
     addItem(title: string, content: string) {
-        const PostObject = new Post(title, content, 0);
-        this.posts.push(PostObject);
-        this.emitPostSubject();
+        const PostObject = new Post(title, content, 0); // Création d'un nouveau post avec les valeurs du formulaire passées en paramètre
+        this.posts.push(PostObject); // Ajout du post dans le tableau 
+        this.emitPostSubject(); // Actualiser la liste avec le post en plus 
     }
 
     emitPostSubject() {
         this.postsSubject.next(this.posts.slice());
+    }
+
+    deleteIt(post : Post) {
+        let index = this.posts.findIndex(d => d.title === post.title); // Récupérer l'index du post à supprimer
+        this.posts.splice(index, 1); // Supprime le post 
+        this.emitPostSubject(); // Actualiser la liste avec le post en moins 
     }
 
 }
